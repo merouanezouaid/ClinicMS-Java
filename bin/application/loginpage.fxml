@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="326.0" prefWidth="677.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <AnchorPane layoutX="-149.0" layoutY="-100.0" prefHeight="200.0" prefWidth="200.0" />
+      <Pane prefHeight="326.0" prefWidth="334.0" style="-fx-background-color: #0c2461;">
+         <children>
+            <TextField layoutX="33.0" layoutY="131.0" prefHeight="32.0" prefWidth="250.0" promptText="Nom d'utilisateur" />
+            <PasswordField layoutX="33.0" layoutY="189.0" prefHeight="32.0" prefWidth="250.0" promptText="Mot de passe" />
+            <Text fill="WHITE" layoutX="18.0" layoutY="52.0" stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion de Cabinet Medical" wrappingWidth="280.0">
+               <font>
+                  <Font name="Segoe UI Semibold" size="35.0" />
+               </font>
+            </Text>
+            <Button layoutX="45.0" layoutY="253.0" mnemonicParsing="false" onAction="#seConnecter" prefHeight="44.0" prefWidth="98.0" style="-fx-background-color: #3498db;" text="Se connecter" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semibold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="167.0" layoutY="253.0" mnemonicParsing="false" onAction="#logout" prefHeight="44.0" prefWidth="98.0" style="-fx-background-color: #e74c3c;" text="Quitter" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semibold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <ImageView fitHeight="326.0" fitWidth="349.0" layoutX="328.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../../../Pictures/doc.PNG" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

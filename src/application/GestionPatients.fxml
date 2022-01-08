@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="720.0" prefWidth="821.0" style="-fx-background-color: #0c2461;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.SidebarController">
+   <children>
+      <Text fill="#f2f2f2" layoutX="310.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion des Patients">
+         <font>
+            <Font name="Segoe UI Semibold" size="31.0" />
+         </font>
+      </Text>
+      <TabPane layoutX="22.0" layoutY="105.0" prefHeight="647.0" prefWidth="821.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <tabs>
+          <Tab text="Patients">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField layoutX="46.0" layoutY="41.0" prefHeight="35.0" prefWidth="226.0" promptText="CIN" />
+                        <TextField layoutX="56.0" layoutY="375.0" prefHeight="30.0" prefWidth="226.0" promptText="Nom" />
+                        <TextField layoutX="323.0" layoutY="329.0" prefHeight="30.0" prefWidth="226.0" promptText="Telephone" />
+                        <TextField layoutX="56.0" layoutY="425.0" prefHeight="29.0" prefWidth="226.0" promptText="Prenom" />
+                        <TextField layoutX="56.0" layoutY="525.0" prefHeight="30.0" prefWidth="226.0" promptText="CIN" />
+                        <TextField layoutX="56.0" layoutY="572.0" prefHeight="31.0" prefWidth="226.0" promptText="Date de naissance" />
+                        <TextField layoutX="56.0" layoutY="329.0" prefHeight="30.0" prefWidth="226.0" promptText="CIN" />
+                        <TextArea layoutX="324.0" layoutY="472.0" prefHeight="131.0" prefWidth="224.0" promptText="Adresse" />
+                        <ComboBox layoutX="56.0" layoutY="477.0" prefHeight="31.0" prefWidth="225.0" />
+                        <ComboBox layoutX="323.0" layoutY="375.0" prefHeight="31.0" prefWidth="225.0" promptText="Situation Familiale" />
+                        <ComboBox layoutX="324.0" layoutY="424.0" prefHeight="31.0" prefWidth="225.0" promptText="Mutuelle" />
+                        <Button layoutX="605.0" layoutY="359.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="133.0" style="-fx-background-color: #3498db;" text="Nouveau Patient" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="622.0" layoutY="440.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="98.0" style="-fx-background-color: #3498db;" text="Modifier" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="622.0" layoutY="517.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="98.0" style="-fx-background-color: #3498db;" text="Supprimer" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="12.0" />
+                           </font>
+                        </Button>
+                        <TableView layoutX="71.0" layoutY="109.0" prefHeight="200.0" prefWidth="673.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="C1" />
+                            <TableColumn prefWidth="75.0" text="C2" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Antecedents">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Text fill="#f2f2f2" layoutX="32.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter des antecedents">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="31.0" />
+                           </font>
+                        </Text>
+                        <TableView layoutX="32.0" layoutY="159.0" prefHeight="401.0" prefWidth="429.0">
+                           <columns>
+                              <TableColumn prefWidth="75.0" text="C1" />
+                              <TableColumn prefWidth="75.0" text="C2" />
+                           </columns>
+                        </TableView>
+                        <TextField layoutX="43.0" layoutY="103.0" prefHeight="35.0" prefWidth="226.0" promptText="CIN" />
+                        <TextField layoutX="525.0" layoutY="183.0" prefHeight="35.0" prefWidth="226.0" promptText="Patient ID" />
+                        <TextField layoutX="525.0" layoutY="342.0" prefHeight="35.0" prefWidth="226.0" promptText="Antecedent" />
+                        <TextField layoutX="525.0" layoutY="425.0" prefHeight="35.0" prefWidth="226.0" promptText="Commentaire" />
+                        <RadioButton layoutX="525.0" layoutY="258.0" mnemonicParsing="false" text="Familial" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="14.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton layoutX="638.0" layoutY="258.0" mnemonicParsing="false" text="Medical" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="14.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton layoutX="525.0" layoutY="292.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="118.0" text="Chirurgical" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="14.0" />
+                           </font>
+                        </RadioButton>
+                        <Button layoutX="571.0" layoutY="516.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="135.0" style="-fx-background-color: #3498db;" text="Ajouter l'antecedent" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="12.0" />
+                           </font>
+                        </Button>
+                        <ImageView fitHeight="82.0" fitWidth="82.0" layoutX="665.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../Downloads/1533790-removebg-preview.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Rendez-vous">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="560.0" layoutY="500.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="135.0" style="-fx-background-color: #3498db;" text="Regler le rendez-vous" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="12.0" />
+                           </font>
+                        </Button>
+                        <TextField layoutX="514.0" layoutY="415.0" prefHeight="35.0" prefWidth="226.0" promptText="Motif" />
+                        <TextField layoutX="514.0" layoutY="335.0" prefHeight="35.0" prefWidth="226.0" promptText="Heure" />
+                        <TextField layoutX="514.0" layoutY="182.0" prefHeight="35.0" prefWidth="226.0" promptText="Patient ID" />
+                        <TextField layoutX="49.0" layoutY="94.0" prefHeight="35.0" prefWidth="226.0" promptText="CIN" />
+                        <TableView layoutX="36.0" layoutY="151.0" prefHeight="401.0" prefWidth="429.0">
+                           <columns>
+                              <TableColumn prefWidth="75.0" text="C1" />
+                              <TableColumn prefWidth="75.0" text="C2" />
+                           </columns>
+                        </TableView>
+                        <Text fill="#f2f2f2" layoutX="28.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reglez un Rendez-vous">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="31.0" />
+                           </font>
+                        </Text>
+                        <DatePicker layoutX="513.0" layoutY="264.0" prefHeight="35.0" prefWidth="227.0" promptText="Date " />
+                        <ImageView fitHeight="97.0" fitWidth="74.0" layoutX="666.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../Downloads/ezgif.com-gif-maker%20(2).png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <ImageView fitHeight="62.0" fitWidth="63.0" layoutX="254.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Downloads/icons8-user-96.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

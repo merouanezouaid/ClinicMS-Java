@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="bp" prefHeight="720.0" prefWidth="1004.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SidebarController">
+   <left>
+      <VBox prefHeight="720.0" prefWidth="184.0" style="-fx-background-color: #0c2461;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="179.0" fitWidth="184.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../../../../Downloads/icons8-doctor-512.png" />
+               </image>
+               <VBox.margin>
+                  <Insets bottom="50.0" top="60.0" />
+               </VBox.margin>
+            </ImageView>
+            <Button mnemonicParsing="false" onAction="#ui1" prefHeight="46.0" prefWidth="182.0" stylesheets="@application.css" text="Patients" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semibold" size="12.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#ui2" prefHeight="48.0" prefWidth="182.0" stylesheets="@application.css" text="Consultation" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semibold" size="12.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#ui3" prefHeight="48.0" prefWidth="182.0" stylesheets="@application.css" text="Docteurs" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semibold" size="12.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#ui4" prefHeight="48.0" prefWidth="182.0" stylesheets="@application.css" text="Laboratoire" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semibold" size="12.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#logout" prefHeight="44.0" prefWidth="98.0" style="-fx-background-color: #e74c3c;" text="Quitter" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semibold" size="12.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="40.0" top="180.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </left>
+</BorderPane>
