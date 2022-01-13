@@ -20,7 +20,7 @@ public class SidebarController implements Initializable{
 	
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
-		
+
 	}
 	
 	@FXML
@@ -30,22 +30,22 @@ public class SidebarController implements Initializable{
 
     @FXML
     void ui1(ActionEvent event) {
-    	loadUI("Laboratoire");
-    }
-
-    @FXML
-    void ui2(ActionEvent event) {
     	loadUI("GestionPatients");
     }
 
     @FXML
-    void ui3(ActionEvent event) {
+    void ui2(ActionEvent event) {
+    	// load consultation.fxml
+    }
 
+    @FXML
+    void ui3(ActionEvent event) {
+    	loadUI("GestionDocteurs");
     }
 
     @FXML
     void ui4(ActionEvent event) {
-
+    	loadUI("Laboratoire");
     }
 
     @FXML
@@ -62,13 +62,13 @@ public class SidebarController implements Initializable{
 		}
     }
     
-    private void loadUI(String ui) {
+    public void loadUI(String ui) {
     	Parent root = null;
     	try {
            root = FXMLLoader.load(getClass().getResource(ui + ".fxml"));
     	}
     	catch(IOException ex) {
-    		System.out.println(ex.getMessage());
+    		ex.printStackTrace();
     	}
     	bp.setCenter(root);
     	

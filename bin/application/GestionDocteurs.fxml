@@ -1,8 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
+<AnchorPane prefHeight="720.0" prefWidth="821.0" style="-fx-background-color: #0c2461;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DocteurController">
+   <children>
+      <Text fill="WHITE" layoutX="45.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Consulter Docteurs">
+         <font>
+            <Font name="Segoe UI Semibold" size="39.0" />
+         </font>
+      </Text>
+      <TextField fx:id="dcintext" layoutX="83.0" layoutY="525.0" prefHeight="25.0" prefWidth="192.0" promptText="CIN" />
+      <TextField fx:id="dnomtext" layoutX="84.0" layoutY="571.0" prefHeight="25.0" prefWidth="192.0" promptText="Nom" />
+      <TextField fx:id="dspetext" layoutX="340.0" layoutY="611.0" prefHeight="25.0" prefWidth="185.0" promptText="Specialite" />
+      <TextField fx:id="dprenomtext" layoutX="84.0" layoutY="615.0" prefHeight="25.0" prefWidth="192.0" promptText="Prenom" />
+      <TextField fx:id="dteltext" layoutX="83.0" layoutY="658.0" prefHeight="25.0" prefWidth="192.0" promptText="Telephone" />
+      <TextField fx:id="demailtext" layoutX="338.0" layoutY="478.0" prefHeight="25.0" prefWidth="189.0" promptText="Email" />
+      <TextField fx:id="ddeptext" layoutX="340.0" layoutY="569.0" prefHeight="25.0" prefWidth="185.0" promptText="Departement" />
+      <TextField fx:id="dgradetext" layoutX="340.0" layoutY="524.0" prefHeight="25.0" prefWidth="185.0" promptText="Grade" />
+      <DatePicker fx:id="tdatetext" layoutX="340.0" layoutY="654.0" prefHeight="25.0" prefWidth="185.0" promptText="Date d'embauche" />
+      <TextField fx:id="searchdoc" layoutX="94.0" layoutY="101.0" prefHeight="35.0" prefWidth="226.0" promptText="Docteur ID" />
+      <TableView fx:id="tableDocteur" layoutX="23.0" layoutY="180.0" prefHeight="272.0" prefWidth="777.0">
+        <columns>
+          <TableColumn fx:id="docid" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="doccin" prefWidth="75.0" text="CIN" />
+            <TableColumn fx:id="docnom" prefWidth="53.0" text="Nom" />
+            <TableColumn fx:id="docprenom" prefWidth="97.0" text="Prenom" />
+            <TableColumn fx:id="doctel" prefWidth="75.0" text="Telephone" />
+            <TableColumn fx:id="docemail" prefWidth="75.0" text="Email" />
+            <TableColumn fx:id="docgrade" prefWidth="75.0" text="Grade" />
+            <TableColumn fx:id="docdep" prefWidth="75.0" text="Departement" />
+            <TableColumn fx:id="docspe" prefWidth="75.0" text="Specialite" />
+            <TableColumn fx:id="docdate" prefWidth="101.0" text="Date d'embauche" />
+        </columns>
+      </TableView>
+      <Button layoutX="627.0" layoutY="618.0" mnemonicParsing="false" onAction="#supprimerDocteur" prefHeight="44.0" prefWidth="98.0" style="-fx-background-color: #3498db;" text="Supprimer" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Semibold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="627.0" layoutY="552.0" mnemonicParsing="false" onAction="#modifierDocteur" prefHeight="44.0" prefWidth="98.0" style="-fx-background-color: #3498db;" text="Editer" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Semibold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="627.0" layoutY="481.0" mnemonicParsing="false" onAction="#ajouterDocteur" prefHeight="44.0" prefWidth="98.0" style="-fx-background-color: #3498db;" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font name="Segoe UI Semibold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </Button>
+      <ImageView fitHeight="129.0" fitWidth="144.0" layoutX="660.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Downloads/icons8-doctor-120.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="didtext" editable="false" layoutX="84.0" layoutY="478.0" prefHeight="25.0" prefWidth="192.0" promptText="ID" />
+   </children>
 </AnchorPane>
-

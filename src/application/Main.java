@@ -1,5 +1,8 @@
 package application;
 	
+// import java.sql.Connection;
+// import java.sql.PreparedStatement;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -19,8 +22,13 @@ public class Main extends Application {
 	        primaryStage.setScene(scene);
 	        primaryStage.show();
 	        primaryStage.setResizable(false);
+	        //Connection cn = SQLConnection.getDBConnection();
+			//String sql="INSERT INTO Patient (nom, prenom) VALUES ('Mohamed', 'Oualid')"; 
+			//PreparedStatement ps=cn.prepareStatement(sql);
+
+			//ps.execute();
 	        
-			primaryStage.setOnCloseRequest(event -> {
+	        primaryStage.setOnCloseRequest(event -> {
 				event.consume();
 				logout(primaryStage);	
 			});

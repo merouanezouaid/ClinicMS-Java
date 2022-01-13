@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.text.*?>
@@ -7,8 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="720.0" prefWidth="821.0" style="-fx-background-color: #0c2461;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.SidebarController">
+<AnchorPane prefHeight="720.0" prefWidth="821.0" style="-fx-background-color: #0c2461;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PatientController">
    <children>
       <Text fill="#f2f2f2" layoutX="310.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gestion des Patients">
          <font>
@@ -21,38 +21,51 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TextField layoutX="46.0" layoutY="41.0" prefHeight="35.0" prefWidth="226.0" promptText="CIN" />
-                        <TextField layoutX="56.0" layoutY="375.0" prefHeight="30.0" prefWidth="226.0" promptText="Nom" />
-                        <TextField layoutX="323.0" layoutY="329.0" prefHeight="30.0" prefWidth="226.0" promptText="Telephone" />
-                        <TextField layoutX="56.0" layoutY="425.0" prefHeight="29.0" prefWidth="226.0" promptText="Prenom" />
-                        <TextField layoutX="56.0" layoutY="525.0" prefHeight="30.0" prefWidth="226.0" promptText="CIN" />
-                        <TextField layoutX="56.0" layoutY="572.0" prefHeight="31.0" prefWidth="226.0" promptText="Date de naissance" />
-                        <TextField layoutX="56.0" layoutY="329.0" prefHeight="30.0" prefWidth="226.0" promptText="CIN" />
-                        <TextArea layoutX="324.0" layoutY="472.0" prefHeight="131.0" prefWidth="224.0" promptText="Adresse" />
-                        <ComboBox layoutX="56.0" layoutY="477.0" prefHeight="31.0" prefWidth="225.0" />
-                        <ComboBox layoutX="323.0" layoutY="375.0" prefHeight="31.0" prefWidth="225.0" promptText="Situation Familiale" />
-                        <ComboBox layoutX="324.0" layoutY="424.0" prefHeight="31.0" prefWidth="225.0" promptText="Mutuelle" />
+                        <TextField fx:id="searchpatient" layoutX="46.0" layoutY="41.0" prefHeight="35.0" prefWidth="226.0" promptText="CIN" />
+                        <TextField fx:id="pnomtext" layoutX="56.0" layoutY="375.0" prefHeight="30.0" prefWidth="226.0" promptText="Nom" />
+                        <TextField fx:id="pteltext" layoutX="323.0" layoutY="329.0" prefHeight="30.0" prefWidth="226.0" promptText="Telephone" />
+                        <TextField fx:id="pprenomtext" layoutX="56.0" layoutY="425.0" prefHeight="29.0" prefWidth="226.0" promptText="Prenom" />
+                        <TextField fx:id="pcintext" layoutX="56.0" layoutY="525.0" prefHeight="30.0" prefWidth="226.0" promptText="CIN" />
+                        <TextField fx:id="pdatetext" layoutX="56.0" layoutY="572.0" prefHeight="31.0" prefWidth="226.0" promptText="Date de naissance" />
+                        <TextField fx:id="pidtext" editable="false" layoutX="56.0" layoutY="329.0" prefHeight="30.0" prefWidth="226.0" promptText="ID" />
+                        <TextArea fx:id="padrtext" layoutX="324.0" layoutY="472.0" prefHeight="131.0" prefWidth="224.0" promptText="Adresse" />
                         <Button layoutX="605.0" layoutY="359.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="133.0" style="-fx-background-color: #3498db;" text="Nouveau Patient" textFill="WHITE">
                            <font>
                               <Font name="Segoe UI Semibold" size="12.0" />
                            </font>
                         </Button>
-                        <Button layoutX="622.0" layoutY="440.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="98.0" style="-fx-background-color: #3498db;" text="Modifier" textFill="WHITE">
+                        <Button layoutX="622.0" layoutY="440.0" mnemonicParsing="false" onAction="#modifierPatient" prefHeight="44.0" prefWidth="98.0" style="-fx-background-color: #3498db;" text="Modifier" textFill="WHITE">
                            <font>
                               <Font name="Segoe UI Semibold" size="12.0" />
                            </font>
                         </Button>
-                        <Button layoutX="622.0" layoutY="517.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="98.0" style="-fx-background-color: #3498db;" text="Supprimer" textFill="WHITE">
+                        <Button layoutX="622.0" layoutY="517.0" mnemonicParsing="false" onAction="#deletePatient" prefHeight="44.0" prefWidth="98.0" style="-fx-background-color: #3498db;" text="Supprimer" textFill="WHITE">
                            <font>
                               <Font name="Segoe UI Semibold" size="12.0" />
                            </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                         </Button>
-                        <TableView layoutX="71.0" layoutY="109.0" prefHeight="200.0" prefWidth="673.0">
+                        <TableView fx:id="tablePatient" layoutX="34.0" layoutY="103.0" prefHeight="200.0" prefWidth="754.0">
                           <columns>
-                            <TableColumn prefWidth="75.0" text="C1" />
-                            <TableColumn prefWidth="75.0" text="C2" />
+                            <TableColumn fx:id="pid" prefWidth="75.0" text="ID" />
+                            <TableColumn fx:id="pnom" prefWidth="75.0" text="Nom" />
+                              <TableColumn fx:id="pprenom" prefWidth="75.0" text="Prenom" />
+                              <TableColumn fx:id="psexe" prefWidth="75.0" text="Sexe" />
+                              <TableColumn fx:id="pcin" prefWidth="75.0" text="CIN" />
+                              <TableColumn fx:id="pnais" prefWidth="75.0" text="Date de naissance" />
+                              <TableColumn fx:id="ptel" prefWidth="75.0" text="Telephone" />
+                              <TableColumn fx:id="psit" prefWidth="75.0" text="Situation " />
+                              <TableColumn fx:id="pmut" prefWidth="75.0" text="Mutuelle" />
+                              <TableColumn fx:id="padr" prefWidth="78.0" text="Adresse" />
+                              <TableColumn fx:id="pcre" prefWidth="78.0" text="Date de creation" />
+                              <TableColumn fx:id="pdoc" prefWidth="78.0" text="Docteur ID" />
                           </columns>
                         </TableView>
+                        <TextField fx:id="psittext" layoutX="323.0" layoutY="375.0" prefHeight="30.0" prefWidth="226.0" promptText="Situation familiale" />
+                        <TextField fx:id="pmuttext" layoutX="323.0" layoutY="425.0" prefHeight="30.0" prefWidth="226.0" promptText="Mutuelle" />
+                        <TextField fx:id="psexetext" layoutX="56.0" layoutY="472.0" prefHeight="30.0" prefWidth="226.0" promptText="Sexe" />
                      </children>
                   </AnchorPane>
             </content>
@@ -66,32 +79,40 @@
                               <Font name="Segoe UI Semibold" size="31.0" />
                            </font>
                         </Text>
-                        <TableView layoutX="32.0" layoutY="159.0" prefHeight="401.0" prefWidth="429.0">
+                        <TableView fx:id="tableAnt" layoutX="32.0" layoutY="159.0" prefHeight="401.0" prefWidth="429.0">
                            <columns>
-                              <TableColumn prefWidth="75.0" text="C1" />
-                              <TableColumn prefWidth="75.0" text="C2" />
+                              <TableColumn fx:id="pidant" prefWidth="75.0" text="Patient ID" />
+                              <TableColumn fx:id="typeant" prefWidth="75.0" text="Type" />
+                              <TableColumn fx:id="ant" prefWidth="75.0" text="Antecedent" />
+                              <TableColumn fx:id="com" prefWidth="75.0" text="Commentaire" />
                            </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
                         </TableView>
-                        <TextField layoutX="43.0" layoutY="103.0" prefHeight="35.0" prefWidth="226.0" promptText="CIN" />
-                        <TextField layoutX="525.0" layoutY="183.0" prefHeight="35.0" prefWidth="226.0" promptText="Patient ID" />
-                        <TextField layoutX="525.0" layoutY="342.0" prefHeight="35.0" prefWidth="226.0" promptText="Antecedent" />
-                        <TextField layoutX="525.0" layoutY="425.0" prefHeight="35.0" prefWidth="226.0" promptText="Commentaire" />
-                        <RadioButton layoutX="525.0" layoutY="258.0" mnemonicParsing="false" text="Familial" textFill="WHITE">
+                        <TextField fx:id="searchant" layoutX="43.0" layoutY="103.0" prefHeight="35.0" prefWidth="226.0" promptText="ID" />
+                        <TextField fx:id="pidtext2" layoutX="525.0" layoutY="183.0" prefHeight="35.0" prefWidth="226.0" promptText="Patient ID" />
+                        <TextField fx:id="anttext" layoutX="525.0" layoutY="342.0" prefHeight="35.0" prefWidth="226.0" promptText="Antecedent" />
+                        <TextField fx:id="comtext" layoutX="525.0" layoutY="425.0" prefHeight="35.0" prefWidth="226.0" promptText="Commentaire" />
+                        <RadioButton fx:id="familial" layoutX="525.0" layoutY="258.0" mnemonicParsing="false" text="Familial" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="14.0" />
+                           </font>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="tgl" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="medical" layoutX="638.0" layoutY="258.0" mnemonicParsing="false" text="Medical" textFill="WHITE" toggleGroup="$tgl">
                            <font>
                               <Font name="Segoe UI Semibold" size="14.0" />
                            </font>
                         </RadioButton>
-                        <RadioButton layoutX="638.0" layoutY="258.0" mnemonicParsing="false" text="Medical" textFill="WHITE">
+                        <RadioButton fx:id="chirurgical" layoutX="525.0" layoutY="292.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="118.0" text="Chirurgical" textFill="WHITE" toggleGroup="$tgl">
                            <font>
                               <Font name="Segoe UI Semibold" size="14.0" />
                            </font>
                         </RadioButton>
-                        <RadioButton layoutX="525.0" layoutY="292.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="118.0" text="Chirurgical" textFill="WHITE">
-                           <font>
-                              <Font name="Segoe UI Semibold" size="14.0" />
-                           </font>
-                        </RadioButton>
-                        <Button layoutX="571.0" layoutY="516.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="135.0" style="-fx-background-color: #3498db;" text="Ajouter l'antecedent" textFill="WHITE">
+                        <Button layoutX="571.0" layoutY="516.0" mnemonicParsing="false" onAction="#ajouterAnt" prefHeight="44.0" prefWidth="135.0" style="-fx-background-color: #3498db;" text="Ajouter l'antecedent" textFill="WHITE">
                            <font>
                               <Font name="Segoe UI Semibold" size="12.0" />
                            </font>
@@ -109,27 +130,32 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Button layoutX="560.0" layoutY="500.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="135.0" style="-fx-background-color: #3498db;" text="Regler le rendez-vous" textFill="WHITE">
+                        <Button layoutX="560.0" layoutY="500.0" mnemonicParsing="false" onAction="#ajouterRDV" prefHeight="44.0" prefWidth="135.0" style="-fx-background-color: #3498db;" text="Regler le rendez-vous" textFill="WHITE">
                            <font>
                               <Font name="Segoe UI Semibold" size="12.0" />
                            </font>
                         </Button>
-                        <TextField layoutX="514.0" layoutY="415.0" prefHeight="35.0" prefWidth="226.0" promptText="Motif" />
-                        <TextField layoutX="514.0" layoutY="335.0" prefHeight="35.0" prefWidth="226.0" promptText="Heure" />
-                        <TextField layoutX="514.0" layoutY="182.0" prefHeight="35.0" prefWidth="226.0" promptText="Patient ID" />
-                        <TextField layoutX="49.0" layoutY="94.0" prefHeight="35.0" prefWidth="226.0" promptText="CIN" />
-                        <TableView layoutX="36.0" layoutY="151.0" prefHeight="401.0" prefWidth="429.0">
+                        <TextField fx:id="motifrdvtext" layoutX="514.0" layoutY="415.0" prefHeight="35.0" prefWidth="226.0" promptText="Motif" />
+                        <TextField fx:id="heurerdvtext" layoutX="514.0" layoutY="335.0" prefHeight="35.0" prefWidth="226.0" promptText="Heure" />
+                        <TextField fx:id="pidtext3" layoutX="514.0" layoutY="182.0" prefHeight="35.0" prefWidth="226.0" promptText="Patient ID" />
+                        <TextField fx:id="searchrdv" layoutX="49.0" layoutY="94.0" prefHeight="35.0" prefWidth="226.0" promptText="ID" />
+                        <TableView fx:id="tableRDV" layoutX="36.0" layoutY="151.0" prefHeight="401.0" prefWidth="429.0">
                            <columns>
-                              <TableColumn prefWidth="75.0" text="C1" />
-                              <TableColumn prefWidth="75.0" text="C2" />
+                              <TableColumn fx:id="pidrdv" prefWidth="75.0" text="Patient ID" />
+                              <TableColumn fx:id="daterdv" prefWidth="75.0" text="Date de RDV" />
+                              <TableColumn fx:id="heurerdv" prefWidth="75.0" text="Heure" />
+                              <TableColumn fx:id="motifrdv" prefWidth="75.0" text="Motif" />
                            </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
                         </TableView>
                         <Text fill="#f2f2f2" layoutX="28.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reglez un Rendez-vous">
                            <font>
                               <Font name="Segoe UI Semibold" size="31.0" />
                            </font>
                         </Text>
-                        <DatePicker layoutX="513.0" layoutY="264.0" prefHeight="35.0" prefWidth="227.0" promptText="Date " />
+                        <DatePicker fx:id="daterdvtext" layoutX="513.0" layoutY="264.0" prefHeight="35.0" prefWidth="227.0" promptText="Date " />
                         <ImageView fitHeight="97.0" fitWidth="74.0" layoutX="666.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../../../Downloads/ezgif.com-gif-maker%20(2).png" />

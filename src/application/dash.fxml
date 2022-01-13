@@ -51,4 +51,14 @@
          </children>
       </VBox>
    </left>
+   <center>
+      <ImageView fitHeight="719.0" fitWidth="829.0" pickOnBounds="true" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@../../../../../Pictures/dash.PNG" />
+         </image>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </ImageView>
+   </center>
 </BorderPane>
